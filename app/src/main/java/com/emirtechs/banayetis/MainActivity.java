@@ -1,7 +1,9 @@
 package com.emirtechs.banayetis;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -24,6 +27,30 @@ public class MainActivity extends AppCompatActivity {
 
     Handler handler;
     Runnable runnable;
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Çıkış");
+        alert.setMessage("Oyundan çıkmak istediğinize emin misiniz?");
+        alert.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        alert.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MainActivity.this, "Oynamaya Devam !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alert.show();
+
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
         timeText = findViewById(R.id.timeText);
         scoreText = findViewById(R.id.scoreText);
         score = 0;
-        scoreText.setText("Score: " + score);
+        scoreText.setText("Puan: " + score);
 
 
     }
 
     public void increaseScore(View view) {
         score++;
-        scoreText.setText("Score: " + score);
+        scoreText.setText("Puan: " + score);
     }
 
     public void hideImages() {
@@ -83,24 +110,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void startGame(View view) {
         score = 0;
-        scoreText.setText("Score: 0");
+        scoreText.setText("Puan: 0");
         hideImages();
 
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(30000, 1000) {
 
             @Override
             public void onTick(long l) {
-                timeText.setText("Time: " + l / 1000);
+                timeText.setText("Kalan Zaman: " + l / 1000);
             }
 
             @Override
             public void onFinish() {
                 startButton.setEnabled(true);
 
-                timeText.setText("Time Off");
+                timeText.setText("Süre Bitti!");
                 handler.removeCallbacks(runnable);
                 for (ImageView image : imageArray) {
                     image.setVisibility(View.INVISIBLE);
+
                 }
             }
         }.start();
