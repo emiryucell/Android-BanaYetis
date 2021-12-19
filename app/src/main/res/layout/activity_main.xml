@@ -7,17 +7,16 @@
     android:background="#f4f2f3"
     android:gravity="center"
     android:orientation="vertical"
-
     android:weightSum="10"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/timeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-android:id="@+id/timeText"
-        android:text="Time Duration: "
+        android:text="Kalan Zaman: "
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -25,8 +24,8 @@ android:id="@+id/timeText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
-        android:weightSum="3"
-        >
+        android:weightSum="3">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -38,9 +37,9 @@ android:id="@+id/timeText"
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
 
 
                 app:srcCompat="@drawable/kopek" />
@@ -50,8 +49,8 @@ android:id="@+id/timeText"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="increaseScore"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
 
             <ImageView
@@ -59,8 +58,8 @@ android:id="@+id/timeText"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="increaseScore"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
         </LinearLayout>
 
@@ -76,27 +75,27 @@ android:id="@+id/timeText"
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
         </LinearLayout>
 
@@ -112,26 +111,26 @@ android:id="@+id/timeText"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="increaseScore"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:onClick="increaseScore"
                 android:layout_weight="1"
                 android:background="#f4f2f3"
+                android:onClick="increaseScore"
                 app:srcCompat="@drawable/kopek" />
         </LinearLayout>
 
@@ -139,12 +138,12 @@ android:id="@+id/timeText"
     </LinearLayout>
 
     <TextView
+        android:id="@+id/scoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:id="@+id/scoreText"
-        android:text="Score: "
+        android:text="Puan: "
         android:textSize="20sp"
         android:textStyle="bold"></TextView>
 
